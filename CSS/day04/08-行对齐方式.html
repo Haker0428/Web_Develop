@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>行对齐方式</title>
+    <style>
+        .box {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-end;
+            /* align-items: flex-start; */
+            justify-content:  space-between;
+            height: 300px;
+            border: 1px solid #000;
+        }
+
+        .box div {
+            width: 300px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+    </div>
+</body>
+</html>
