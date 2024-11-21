@@ -1,0 +1,30 @@
+// out: false
+/* 运算 */
+.box {
+    width: 100 + 200px;
+    width: 100 - 80px;
+    width: 100 * 2px;
+    width: (100 / 2px);
+}
+
+.father {
+    color: red;
+
+    .son {
+        width: 200px;
+        a {
+            color: green;
+        }
+
+        // & 表示当前选择器
+        &:hover {
+            color: blue;
+        }
+    }
+}
+
+@myColor: pink;
+
+.box {
+    color: @myColor;
+}

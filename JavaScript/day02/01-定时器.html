@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let cnt = 0;
+        let timer1 = setInterval(function() {
+            console.log('hello');
+            cnt++;
+            if (cnt === 5) {
+                clearInterval(timer1);
+            }
+            
+        }, 1000);
+    </script>
+</body>
+</html>

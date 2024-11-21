@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 2000px;
+        }
+
+        div {
+            display: none;
+            margin: 100px auto;
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            overflow: scroll;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        我有很多文字我有很多文字
+        我有很多文字我有很多文字
+        我有很多文字我有很多文字
+        我有很多文字我有很多文字
+        我有很多文字我有很多文字
+        我有很多文字我有很多文字
+        我有很多文字我有很多文字
+        我有很多文字我有很多文字
+        我有很多文字我有很多文字
+        我有很多文字我有很多文字
+        我有很多文字我有很多文字
+        我有很多文字我有很多文字
+    </div>
+    <script>
+        const div = document.querySelector('div');
+        window.addEventListener('scroll', function () {
+            console.log('页面滚动了');
+            // 获取HTML元素
+            const top = document.documentElement.scrollTop;
+            if (top >= 100) {
+                div.style.display = 'block';
+            } else {
+                div.style.display = 'none';
+            }
+        });
+        
+
+    </script>
+</body>
+</html>

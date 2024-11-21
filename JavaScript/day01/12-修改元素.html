@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="box" src="#" alt="">
+    <script>
+        const box = document.querySelector('#box');
+
+        function getRandom(N, M) {
+            return Math.floor(Math.random() * (M - N + 1) + N);
+        }
+
+        let random = getRandom(1, 6);
+        box.src = `./images/${random}.webp`;
+        box.title = '这是一张图片';
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 100px;
+            background-color: pink;
+
+            /* linear：匀速 */
+            animation: change 1s linear;
+
+             /* steps 分布动画，工作中，配合精灵图实现精灵动画 */
+            animation: change 1s steps(3);
+
+            /* 如果有两个时间，第一个是动画时长，第二个是延迟时间 */
+            animation: change 2s 2s;
+
+            /* 重复3次 */
+            animation: change 2s 3;
+
+            /* 无线循环 */
+            animation: change 2s infinite;
+
+            /* 反向 */
+            animation: change 2s infinite alternate;
+
+            /* 动画执行完毕时状态 */
+            animation: change 2s forwards;
+        }
+
+        @keyframes change {
+            from {
+                width: 200px;
+            }
+            to {
+                width: 800px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

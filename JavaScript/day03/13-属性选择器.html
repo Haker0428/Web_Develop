@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 有value属性的input */
+        input[value] {
+            color: red;
+        }
+
+        input[type=password] {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" value="1234" data-id="1">
+    <input type="password">
+    <script>
+        const input = document.querySelector('input');
+        console.log(input.dataset);
+        
+    </script>
+</body>
+</html>

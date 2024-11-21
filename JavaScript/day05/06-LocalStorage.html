@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 注意：本地存储智能存储字符串
+        localStorage.setItem('name', 'Tom');
+
+        const data= localStorage.getItem('name');
+        console.log(data);
+        localStorage.removeItem('name');
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+// out: ../css/index.css
+
+@import "./base.less";
+
+@rootSize: 37.5rem;
+
+// 头部
+header {
+    display: flex;
+    padding-left: (15 / @rootSize);
+    padding-right: (15 / @rootSize);
+    justify-content: space-between;
+    height: (44 / @rootSize);
+    line-height: (44 /@rootSize);
+    .icon-left {
+        font-size: (22 / @rootSize);
+    }
+
+    h3 {
+        font-size: (17 / @rootSize);
+    }
+
+    .note {
+        font-size: (15 / @rootSize);
+        color: #2CB5A5;
+    }
+}
+
+
+.banner {
+    text-align: center;
+    margin-top: (30 / @rootSize);
+    margin-bottom: (34 / @rootSize);
+    img {
+        width: (240 / @rootSize);
+        height: (206 / @rootSize);
+    }
+
+    div {
+        margin-top: (18 / @rootSize);
+        height: (25 / @rootSize);
+        font-size: (16 / @rootSize);
+        .time {
+            color: #16C2A3;
+        }
+    }
+}
+
+// 问诊类型
+.type {
+    margin: (15 / @rootSize);
+
+    li {
+        height: (78 / @rootSize);
+        border: (0.5 / @rootSize) solid #EDEDEDE5;
+        border-radius: (4 / @rootSize);
+        margin-bottom: (15 / @rootSize);
+        padding: 0 (15 / @rootSize);
+
+        a {
+            height: 100%;
+            display: flex;
+            align-items: center;
+
+            img {
+                margin-right: (14 / @rootSize);
+                width: (40 / @rootSize);
+                height: (40 / @rootSize);
+            }
+        }
+
+        .txt {
+            flex: 1;
+
+            h4 {
+                font-size: (16 / @rootSize);
+            }
+
+            p {
+                font-size: (13 / @rootSize);
+            }
+        }
+
+
+        span {
+            font-size: (17 / @rootSize);
+        }
+    }
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            display: inline-block;
+            text-align: center;
+            width: 100px;
+            padding: 5px 10px;
+            border: 1px solid #000;
+            margin: 2px;
+            border-radius: 4px;
+            box-shadow: 2px 2px 2px pink;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function mutiply() {
+            let row = 10;
+            let row_num = 1;
+            for (let i = 0; i < row; i++) {
+                for (let j = 0; j < row_num; j++) {
+                    document.write(`<span>${i} * ${j} = ${i * j}</span>`);
+                }
+                row_num++;
+                document.write('<br>');
+            }
+        }
+        
+        mutiply();
+        mutiply();
+        mutiply();
+    </script>
+</body>
+</html>

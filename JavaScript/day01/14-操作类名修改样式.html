@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+
+        .box {
+            width: 300px;
+            background-color: skyblue;
+            margin-top: 100px auto;
+            padding: 10px;
+            border: 1px solid #000;
+        }
+
+        button {
+            display: block;
+            margin-top: 10px;
+            width: 100px;
+            height: 30px;
+        }
+    </style>https://pan.baidu.com/s/1MxueOHXGQtmE-ypRq1kELA&pwd=9987
+</head>
+<body>
+    <div></div>
+    <button id="btn">1</button>
+    <script>
+        const btn = document.querySelector('#btn');
+        const div = document.querySelector('div');
+        btn.onclick = function() {
+            div.className = 'box';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(/^哈*$/.test('')); // true
+        console.log(/^哈*$/.test('哈')); // true
+        console.log(/^哈*$/.test('哈哈')); // true
+
+        console.log('---------------------');
+        console.log(/^哈+$/.test('')); // false
+        console.log(/^哈+$/.test('哈')); // true
+        console.log(/^哈+$/.test('哈哈')); // true
+        console.log('---------------------');
+
+        console.log(/^哈?$/.test('哈')); // true
+        console.log(/^哈?$/.test('哈哈')); // false
+
+        console.log('---------------------');
+        console.log(/^哈{4}$/.test('哈哈哈哈')); // true
+        console.log(/^哈{4}$/.test('哈哈哈')); // false
+
+        console.log('---------------------');
+
+        console.log(/^哈{3,}$/.test('哈哈哈哈')); // true
+        console.log(/^哈{3,}$/.test('哈哈哈')); // true
+        console.log('---------------------');
+
+        console.log(/^哈{3,5}$/.test('哈哈哈哈')); // true
+        console.log(/^哈{3,5}$/.test('哈哈哈哈哈')); // true
+        console.log(/^哈{3,5}$/.test('哈哈哈哈哈哈')); // false
+    </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    .countdown {
+      width: 240px;
+      height: 305px;
+      text-align: center;
+      line-height: 1;
+      color: #fff;
+      background-color: brown;
+      /* background-size: 240px; */
+      /* float: left; */
+      overflow: hidden;
+    }
+
+    .countdown .next {
+      font-size: 16px;
+      margin: 25px 0 14px;
+    }
+
+    .countdown .title {
+      font-size: 33px;
+    }
+
+    .countdown .tips {
+      margin-top: 80px;
+      font-size: 23px;
+    }
+
+    .countdown small {
+      font-size: 17px;
+    }
+
+    .countdown .clock {
+      width: 142px;
+      margin: 18px auto 0;
+      overflow: hidden;
+    }
+
+    .countdown .clock span,
+    .countdown .clock i {
+      display: block;
+      text-align: center;
+      line-height: 34px;
+      font-size: 23px;
+      float: left;
+    }
+
+    .countdown .clock span {
+      width: 34px;
+      height: 34px;
+      border-radius: 2px;
+      background-color: #303430;
+    }
+
+    .countdown .clock i {
+      width: 20px;
+      font-style: normal;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="countdown">
+    <p class="next">今天是2222年2月22日</p>
+    <p class="title">下班倒计时</p>
+    <p class="clock">
+      <span id="hour">00</span>
+      <i>:</i>
+      <span id="minutes">25</span>
+      <i>:</i>
+      <span id="scond">20</span>
+    </p>
+    <p class="tips">18:30:00下课</p>
+  </div>
+  <script>
+    function getTime() {
+      const now = +new Date();
+      const end = +new Date('2024-12-22 18:30:00');
+      const second = parseInt((end - now) / 1000);
+
+      const hour = parseInt(second / 3600 % 24);
+      const minutes = parseInt((second % 3600) / 60);
+      const scond = parseInt(second % 60);
+
+      const now_time = new Date();
+      const day = now_time.getDate();
+      const month = now_time.getMonth() + 1;
+      const year = now_time.getFullYear();
+
+      const date_time = document.querySelector('.next');
+
+      date_time.innerHTML = `今天是${year}年${month}月${day}日`;
+      const hourEle = document.getElementById('hour');
+      const minutesEle = document.getElementById('minutes');
+      const scondEle = document.getElementById('scond');
+
+      hourEle.innerHTML = hour < 10 ? '0' + hour : hour;
+      minutesEle.innerHTML = minutes < 10 ? '0' + minutes : minutes;
+      scondEle.innerHTML = scond < 10 ? '0' + scond : scond;
+    }
+
+    getTime();  
+    setInterval(function() {
+      getTime();
+    }, 1000);
+
+    // 设置随机颜色
+    function randomColor() {
+      return '#' + Math.random().toString(16).slice(2, 8);
+    }
+    const countdown = document.querySelector('.countdown');
+    countdown.style.backgroundColor = randomColor();
+  </script>
+</body>
+
+</html>

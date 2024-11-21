@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机颜色</title>
+</head>
+<body>
+    <script>
+        function getRandomColor(flag) {
+            if (flag) {
+                return '#' + Math.floor(Math.random() * 16777215).toString(16);
+            } else {
+                return 'rgb(' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ')';
+            }
+        }
+
+        console.log(getRandomColor(true));
+        console.log(getRandomColor(false));
+    </script>
+</body>
+</html>
