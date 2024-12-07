@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <p>1123</p> -->
+    <script>
+        function fn(x) {
+            debugger
+            try {
+                const p = document.querySelector('p');
+                p.style.color = 'red';
+            } catch (error) {
+                console.log('ERR_MSG: ' + error.message);
+            } finally {
+                console.log('无论是否报错，都会执行');
+            }
+        }
+        fn();
+    </script>
+</body>
+</html>

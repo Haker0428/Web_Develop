@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 闭包：函数内部定义的函数，可以访问函数内部的变量
+        function outer() {
+            let a = 10;
+            return function() {
+                console.log(a);
+            }
+        }
+        outer()()
+
+
+        function fn() {
+            let i = 0;
+            return function() {
+                i++;
+                console.log(i);
+            }
+        }
+
+        fn()(); // 1
+        fn()(); // 1
+        fn()(); // 1
+
+        let fn1 = fn();
+        fn1(); // 1
+        fn1(); // 2
+        fn1(); // 3
+    </script>
+</body>
+</html>

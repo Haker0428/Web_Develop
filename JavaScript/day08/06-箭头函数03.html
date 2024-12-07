@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const fn = () => {
+            console.log(this); // window
+        }
+        fn();
+
+        const obj = {
+            uname: '张三',
+            sayHi: () => {
+                console.log(this); // window
+            }
+        }
+        obj.sayHi();
+
+        const obj2 = {
+            uname: '张三',
+            sayHi: function() {
+                let i = 10
+                const fn2 = () => {
+                    console.log(this); // obj2
+                }
+                fn2();
+            }
+        }
+        obj2.sayHi();
+    </script>
+</body>
+</html>

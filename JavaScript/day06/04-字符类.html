@@ -15,6 +15,17 @@
 
         console.log('---------------------');
         console.log(/^[a-z]$/.test('p')); // true
+        console.log(/^[a-z]$/.test('P')); // false
+        console.log(/^[0-9]$/.test(2)); // true
+        console.log(/^[a-zA-Z0-9]$/.test(2)); // false
+        console.log(/^[a-zA-Z0-9]$/.test('a')); // true
+        console.log(/^[a-zA-Z0-9]$/.test('P')); // true
+        console.log(/^[^a-zA-Z0-9]$/.test('P')); // false
+        console.log('---------------------');
+
+        console.log(/^\d{4}-\d{1,2}-\d{1,2}/.test('2022-02-01')); // true
+        
+
     </script>
 </body>
 </html>

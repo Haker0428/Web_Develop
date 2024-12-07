@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>案例_使用Promise+XHR_获取省份列表</title>
+</head>
+
+<body>
+  <p class="my-p"></p>
+  <script>
+    /**
+     * 目标：使用Promise管理XHR请求省份列表
+     *  1. 创建Promise对象
+     *  2. 执行XHR异步代码，获取省份列表
+     *  3. 关联成功或失败函数，做后续处理
+    */
+    const p = new Promise((resolve, reject) => {
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', 'http://hmajax.itheima.net/api/province');
+      xhr.addEventListener('loadend', () => {
+        console.log(xhr.response);
+
+        const data = JSON.parse(xhr.response);
+        if (xhr.status >= 200 && xhr.status < 300) {
+          resolve(data);
+        } else {
+          reject(new Error('请求失败'));
+        }
+      })
+      xhr.send();
+    })
+
+    p.then((res) => {
+      console.log(res);
+      document.querySelector('.my-p').innerHTML = res.list.join('<br>');
+    })
+    .catch((err) => {
+      // 错误对象要使用dir打印，否则看不到错误对象的属性
+      console.dir(err);
+    })
+  </script>
+</body>
+
+</html>

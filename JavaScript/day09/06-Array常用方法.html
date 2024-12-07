@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr = ['red', 'blue', 'green'];
+        const ret = arr.find((ele) => {
+            return ele === 'blue';
+        });
+        console.log(ret);
+        
+        const obj1 = [
+            {
+                name: '小米',
+                price: 1999
+            },
+            {
+                name: '华为',
+                price: 3999
+            }
+        ];
+
+        const ret1 = obj1.find(item => {
+            return item.name === '小米';
+        });
+        console.log(ret1);
+
+        const arr2 = [2, 3, 3, 2];
+        const ret2 = arr2.every((ele) => {
+            return ele > 2;
+        });
+        console.log(ret2);
+    </script>
+</body>
+</html>

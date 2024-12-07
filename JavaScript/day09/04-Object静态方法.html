@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const o = { uname: 'pink', age: 18};
+        // 获取属性名
+        console.log(Object.keys(o)); // ['uname', 'age']
+        // 获取属性值
+        console.log(Object.values(o)); // ['pink', 18]
+        
+        const oo = {}
+        Object.assign(oo, o)
+        console.log(oo);
+        
+        Object.assign(o, { gender: '女'});
+        console.log(o);
+    </script>
+</body>
+</html>

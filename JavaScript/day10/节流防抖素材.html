@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    .box {
+      width: 500px;
+      height: 500px;
+      background-color: #ccc;
+      color: #fff;
+      text-align: center;
+      font-size: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+  <script src="lodash.min.js"></script>
+  <script>
+    const box = document.querySelector('.box');
+    let timer = null;
+    let i  = 1;
+
+    function mouseMove() {
+        box.innerHTML = i++;
+    }
+
+    // lodash实现防抖
+    box.addEventListener('mousemove', _.debounce(mouseMove, 500));
+
+  
+  // 手写防抖函数
+  // 该函数是利用 setTimeout 定时器来实现
+  // 1. 声明定时器变量
+
+  // 2. 每次鼠标移动（事件触发）的时候都要先判断是否有定时器，
+  // 如果有，则清除定时器，然后重新设置
+  function debounce(func, delay) {
+      let timer;
+      return function() {
+          if (timer) {
+            clearTimeout(timer);
+          } else {
+            timer = setTimeout(func, delay);
+          }
+      }
+  }
+
+  // 使用手写的防抖函数
+  box.addEventListener('mousemove', debounce(mouseMove, 500));
+
+  // lodash 节流
+  // box.addEventListener('mousemove', _.throttle(mouseMove, 3000));
+  function throttle(func, delay) {
+      let timer;
+      return function() {
+          if (!timer) {
+            timer = setTimeout(function() {
+              func();
+              timer = null;
+            }, delay);
+          }
+      }
+  }
+
+  box.addEventListener('mousemove', throttle(mouseMove, 3000));
+
+  </script>
+</body>
+
+</html>
